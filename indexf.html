@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prasanna | Portfolio</title>
+<meta name="description" content="Engineering student building with Python and Flutter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3f6f1;
+  --ink:#16221c;
+  --muted:#52625a;
+  --line:#cfd9d1;
+  --card:#ffffff;
+  --accent:#1d5fd1;
+  --accent-ink:#ffffff;
+  --mark:#ffd84d;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1713;--ink:#e9f0ea;--muted:#9fb0a5;--line:#26362d;--card:#16211b;--accent:#6ea2ff;--accent-ink:#0f1713;--mark:#ffd84d;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1713;--ink:#e9f0ea;--muted:#9fb0a5;--line:#26362d;--card:#16211b;--accent:#6ea2ff;--accent-ink:#0f1713;--mark:#ffd84d;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:"Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  line-height:1.6;font-size:17px;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+
+header.top{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:10}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:700;text-decoration:none}
+nav{display:flex;gap:22px;align-items:center}
+nav a{text-decoration:none;color:var(--muted);font-size:15px}
+nav a:hover{color:var(--ink)}
+#theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:4px 12px;font:inherit;font-size:14px;cursor:pointer}
+
+.hero{padding:96px 0 72px}
+.hero h1{
+  font-family:"Fraunces",Georgia,serif;font-weight:800;
+  font-size:clamp(2.8rem,9vw,6rem);line-height:1;letter-spacing:-.03em;
+}
+.hero h1 span{background:linear-gradient(transparent 62%,var(--mark) 62%);padding:0 .08em}
+.hero p{max-width:52ch;margin-top:28px;font-size:1.15rem;color:var(--muted)}
+.cta{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:500;border:1.5px solid var(--ink)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:hover{transform:translateY(-1px)}
+
+section{padding:64px 0;border-top:1px solid var(--line)}
+h2{font-family:"Fraunces",Georgia,serif;font-size:2rem;letter-spacing:-.02em;margin-bottom:28px}
+
+.about{display:grid;grid-template-columns:1fr;gap:28px}
+.about p{max-width:62ch;color:var(--muted)}
+.skills{display:flex;flex-wrap:wrap;gap:10px;list-style:none}
+.skills li{border:1.5px solid var(--line);background:var(--card);padding:6px 14px;border-radius:999px;font-size:15px}
+
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.project{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:12px}
+.project h3{font-size:1.2rem}
+.project p{color:var(--muted);font-size:15px;flex:1}
+.tags{display:flex;gap:8px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.tags span{border:1px solid var(--line);border-radius:6px;padding:2px 8px}
+.project a{font-weight:500;color:var(--accent);text-decoration:none}
+.project a:hover{text-decoration:underline}
+
+form{display:grid;gap:14px;max-width:520px}
+label{display:grid;gap:6px;font-size:15px}
+input,textarea{
+  font:inherit;color:var(--ink);background:var(--card);
+  border:1.5px solid var(--line);border-radius:8px;padding:10px 12px;
+}
+textarea{min-height:120px;resize:vertical}
+form button{justify-self:start;cursor:pointer;font:inherit;font-weight:500}
+.links{display:flex;gap:22px;margin-top:28px;flex-wrap:wrap}
+.links a{color:var(--accent)}
+
+footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top">Prasanna</a>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <button id="theme" type="button" aria-label="Toggle dark mode">Theme</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <div class="hero">
+      <h1>Hi, I'm <span>Prasanna</span>.</h1>
+      <p>First-year engineering student building apps with Python and Flutter, and entering hackathons to ship real projects.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">View projects</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap about">
+      <h2>About</h2>
+      <p>I'm an engineering student who learns by building. I'm working on Python scripts and Flutter apps, and I take part in hackathons to turn ideas into working prototypes.</p>
+      <ul class="skills" aria-label="Skills">
+        <li>Python</li>
+        <li>Flutter</li>
+        <li>Dart</li>
+        <li>Git</li>
+        <li>HTML &amp; CSS</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <div class="projects">
+        <article class="project">
+          <h3>Project one</h3>
+          <p>Short description of what it does and the problem it solves.</p>
+          <div class="tags"><span>Flutter</span><span>Dart</span></div>
+          <a href="#">View on GitHub</a>
+        </article>
+        <article class="project">
+          <h3>Project two</h3>
+          <p>Short description of what it does and the problem it solves.</p>
+          <div class="tags"><span>Python</span></div>
+          <a href="#">View on GitHub</a>
+        </article>
+        <article class="project">
+          <h3>Project three</h3>
+          <p>Short description of what it does and the problem it solves.</p>
+          <div class="tags"><span>Python</span><span>Flutter</span></div>
+          <a href="#">View on GitHub</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <form action="mailto:you@example.com" method="post" enctype="text/plain">
+        <label>Name <input type="text" name="name" required autocomplete="name"></label>
+        <label>Email <input type="email" name="email" required autocomplete="email"></label>
+        <label>Message <textarea name="message" required></textarea></label>
+        <button class="btn primary" type="submit">Send message</button>
+      </form>
+      <div class="links">
+        <a href="https://github.com/your-username">GitHub</a>
+        <a href="https://linkedin.com/in/your-username">LinkedIn</a>
+        <a href="mailto:you@example.com">you@example.com</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; <span id="year"></span> Prasanna</div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+(function(){
+  var root = document.documentElement, btn = document.getElementById('theme');
+  try { var s = localStorage.getItem('theme'); if (s) root.setAttribute('data-theme', s); } catch(e){}
+  btn.addEventListener('click', function(){
+    var dark = root.getAttribute('data-theme') === 'dark' ||
+      (!root.getAttribute('data-theme') && matchMedia('(prefers-color-scheme: dark)').matches);
+    var next = dark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
